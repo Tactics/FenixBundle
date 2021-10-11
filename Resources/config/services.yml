@@ -1,0 +1,9 @@
+services:
+    tactics_crsv:
+        field_updater_factory:
+            class: Tactics\CrsvBundle\Updaters\FieldUpdaterFactory
+            arguments:
+                - '@tactics_crsv.short_name_strategy'
+        short_name_strategy:
+            class: Tactics\CrsvBundle\NamingStrategy\ShortNameStrategy
+
