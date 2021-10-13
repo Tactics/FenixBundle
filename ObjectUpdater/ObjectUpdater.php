@@ -47,6 +47,13 @@ class ObjectUpdater implements IObjectUpdater
         return $fieldUpdater->update($object, $changes);
     }
 
+    /**
+     * @return FieldUpdater[]
+     */
+    public function getFieldUpdaters()
+    {
+        return $this->updaters;
+    }
 
     /**
      * @param string $fieldname
