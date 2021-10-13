@@ -2,6 +2,7 @@
 
 namespace Tactics\CrsvBundle\ObjectUpdater;
 
+use Tactics\CrsvBundle\Exceptions\FieldUpdaterNotFoundException;
 use Tactics\CrsvBundle\FieldUpdater\FieldUpdater;
 use Tactics\CrsvBundle\NamingStrategy\NamingStrategy;
 
@@ -38,9 +39,12 @@ class ObjectUpdater implements IObjectUpdater
     public function update($object, string $fieldName, array $changes)
     {
         $fieldUpdater = $this->findFieldUpdater($fieldName);
-        if (!$fieldUpdater) return;
+        if (!$fieldUpdater) {
+            $errorMsg = sprintf("No FieldUpdater found for %s.%s.", get_class($object), $fieldName);
+            throw new FieldUpdaterNotFoundException($errorMsg, 404);
+        }
 
-        $fieldUpdater->update($object, $changes);
+        return $fieldUpdater->update($object, $changes);
     }
 
 
