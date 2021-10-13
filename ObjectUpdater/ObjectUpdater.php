@@ -1,15 +1,16 @@
 <?php
 
-namespace Tactics\CrsvBundle\FIeldUpdaterManager;
+namespace Tactics\CrsvBundle\ObjectUpdater;
 
 use Tactics\CrsvBundle\FieldUpdater\FieldUpdater;
 use Tactics\CrsvBundle\NamingStrategy\NamingStrategy;
 
-class FieldUpdaterManager implements IFieldUpdaterManager
+class ObjectUpdater implements IObjectUpdater
 {
     /** @var NamingStrategy */
     private $namingStrategy;
 
+    /** @var FieldUpdater[] */
     private $updaters = [];
 
     /**
@@ -29,10 +30,25 @@ class FieldUpdaterManager implements IFieldUpdaterManager
     }
 
     /**
+     * @param mixed $object
+     * @param string $fieldName
+     * @param array $changes
+     * @return void
+     */
+    public function update($object, string $fieldName, array $changes)
+    {
+        $fieldUpdater = $this->findFieldUpdater($fieldName);
+        if (!$fieldUpdater) return;
+
+        $fieldUpdater->update($object, $changes);
+    }
+
+
+    /**
      * @param string $fieldname
      * @return FieldUpdater|null
      */
-    public function getFieldUpdater(string $fieldname)
+    private function findFieldUpdater(string $fieldname)
     {
         $needle = \sfInflector::camelize($fieldname);
 

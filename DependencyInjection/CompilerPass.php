@@ -17,8 +17,8 @@ class CompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        $definition = $container->getDefinition('csrv.field_updater_manager');
-        $updaterServices = $container->findTaggedServiceIds('crsv_field_updater');
+        $definition = $container->getDefinition('tactics_crsv.object_updater');
+        $updaterServices = $container->findTaggedServiceIds('tactics_crsv.field_updater');
 
         foreach ($updaterServices as $id => $attributes) {
             $definition->addMethodCall(
