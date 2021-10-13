@@ -17,12 +17,12 @@ class CompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        $definition = $container->getDefinition('csrv.field_updater_factory');
+        $definition = $container->getDefinition('csrv.field_updater_manager');
         $updaterServices = $container->findTaggedServiceIds('crsv_field_updater');
 
         foreach ($updaterServices as $id => $attributes) {
             $definition->addMethodCall(
-                'registerUpdater',
+                'registerFieldUpdater',
                 array(new Reference($id))
             );
         }

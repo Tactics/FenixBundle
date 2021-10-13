@@ -1,18 +1,18 @@
 <?php
 
-namespace Tactics\CrsvBundle\Updaters;
+namespace Tactics\CrsvBundle\FIeldUpdaterManager;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Tactics\CrsvBundle\FieldUpdater\FieldUpdater;
 use Tactics\CrsvBundle\NamingStrategy\NamingStrategy;
 
-class FieldUpdaterFactory implements IFieldUpdaterFactory
+class FieldUpdaterManager implements IFieldUpdaterManager
 {
     /** @var NamingStrategy */
     private $namingStrategy;
 
     private $updaters = [];
 
-    /**e
+    /**
      * @param NamingStrategy $namingStrategy
      */
     public function __construct(NamingStrategy $namingStrategy)
@@ -20,14 +20,17 @@ class FieldUpdaterFactory implements IFieldUpdaterFactory
         $this->namingStrategy = $namingStrategy;
     }
 
-    public function registerUpdater(Updater $updater)
+    /**
+     * @param FieldUpdater $updater
+     */
+    public function registerFieldUpdater(FieldUpdater $updater)
     {
         $this->updaters[$this->namingStrategy->getFieldUpdaterName($updater)] = $updater;
     }
 
     /**
      * @param string $fieldname
-     * @return Updater|void
+     * @return FieldUpdater|null
      */
     public function getFieldUpdater(string $fieldname)
     {

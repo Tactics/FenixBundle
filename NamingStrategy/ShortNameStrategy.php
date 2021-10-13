@@ -2,7 +2,7 @@
 
 namespace Tactics\CrsvBundle\NamingStrategy;
 
-use Tactics\CrsvBundle\Updaters\Updater;
+use Tactics\CrsvBundle\FieldUpdater\FieldUpdater;
 
 /**
  * Class ShortNameStrategy
@@ -10,7 +10,7 @@ use Tactics\CrsvBundle\Updaters\Updater;
  */
 class ShortNameStrategy implements NamingStrategy
 {
-    public function getFieldUpdaterName(Updater $updater)
+    public function getFieldUpdaterName(FieldUpdater $updater)
     {
         return \sfInflector::camelize(str_replace('Updater', '', (new \ReflectionClass($updater))->getShortName()));
     }

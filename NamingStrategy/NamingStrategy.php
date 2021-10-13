@@ -2,7 +2,7 @@
 
 namespace Tactics\CrsvBundle\NamingStrategy;
 
-use Tactics\CrsvBundle\Updaters\Updater;
+use Tactics\CrsvBundle\FieldUpdater\FieldUpdater;
 
 /**
  * Interface NamingStrategy
@@ -11,8 +11,8 @@ use Tactics\CrsvBundle\Updaters\Updater;
 interface NamingStrategy
 {
     /**
-     * @param CommandHandler $handler
+     * @param FieldUpdater $updater
      * @return string
      */
-    public function getFieldUpdaterName(Updater $updater);
+    public function getFieldUpdaterName(FieldUpdater $updater);
 }

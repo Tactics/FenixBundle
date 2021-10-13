@@ -1,7 +1,7 @@
 services:
     tactics_crsv:
-        field_updater_factory:
-            class: Tactics\CrsvBundle\Updaters\FieldUpdaterFactory
+        field_updater_manager:
+            class: Tactics\CrsvBundle\FieldUpdaterManager\FieldUpdaterManager
             arguments:
                 - '@tactics_crsv.short_name_strategy'
         short_name_strategy:
