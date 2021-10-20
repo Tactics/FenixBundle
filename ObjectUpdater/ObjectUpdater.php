@@ -31,12 +31,9 @@ class ObjectUpdater implements IObjectUpdater
     }
 
     /**
-     * @param mixed $object
-     * @param string $fieldName
-     * @param array $changes
-     * @return void
+     * {@inheritdoc}
      */
-    public function update($object, string $fieldName, array $changes)
+    public function update($object, string $fieldName, array $changes, int $revision)
     {
         $fieldUpdater = $this->findFieldUpdater($fieldName);
         if (!$fieldUpdater) {
@@ -44,7 +41,7 @@ class ObjectUpdater implements IObjectUpdater
             throw new FieldUpdaterNotFoundException($errorMsg, 404);
         }
 
-        return $fieldUpdater->update($object, $changes);
+        return $fieldUpdater->update($object, $changes, $revision);
     }
 
     /**
