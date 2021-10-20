@@ -1,6 +1,6 @@
 <?php
 
-namespace Tactics\CrsvBundle\FieldUpdater;
+namespace Tactics\FenixBundle\CrsVereniging\FieldUpdater;
 
 interface FieldUpdater
 {

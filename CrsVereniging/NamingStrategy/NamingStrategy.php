@@ -1,12 +1,12 @@
 <?php
 
-namespace Tactics\CrsvBundle\NamingStrategy;
+namespace Tactics\FenixBundle\CrsVereniging\NamingStrategy;
 
-use Tactics\CrsvBundle\FieldUpdater\FieldUpdater;
+use Tactics\FenixBundle\CrsVereniging\FieldUpdater\FieldUpdater;
 
 /**
  * Interface NamingStrategy
- * @package Tactics\CrsvBundle\NamingStrategy
+ * @package Tactics\FenixBundle\CrsVereniging\NamingStrategy
  */
 interface NamingStrategy
 {

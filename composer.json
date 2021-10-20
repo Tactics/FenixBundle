@@ -1,5 +1,5 @@
 {
-  "name": "tactics/crsv-bundle",
+  "name": "tactics/fenix-bundle",
   "type": "symfony-bundle",
   "keywords": ["symfony", "bundle"],
   "description": "",
@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Tactics\\CrsvBundle\\": ""
+      "Tactics\\FenixBundle\\": ""
     }
   }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tactics\CrsvBundle\DependencyInjection;
+namespace Tactics\FenixBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * Class CrsvCompilerPass
- * @package Tactics\CrsvBundle\DependencyInjection
+ * @package Tactics\FenixBundle\DependencyInjection
  */
 class CompilerPass implements CompilerPassInterface
 {

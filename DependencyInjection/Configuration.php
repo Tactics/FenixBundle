@@ -1,6 +1,6 @@
 <?php
 
-namespace Tactics\CrsvBundle\DependencyInjection;
+namespace Tactics\FenixBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

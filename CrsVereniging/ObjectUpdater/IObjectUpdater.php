@@ -1,8 +1,8 @@
 <?php
 
-namespace Tactics\CrsvBundle\ObjectUpdater;
+namespace Tactics\FenixBundle\CrsVereniging\ObjectUpdater;
 
-use Tactics\CrsvBundle\Exceptions\FieldUpdaterNotFoundException;
+use Tactics\FenixBundle\CrsVereniging\Exceptions\FieldUpdaterNotFoundException;
 
 interface IObjectUpdater
 {

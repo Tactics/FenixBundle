@@ -1,18 +1,17 @@
 <?php
 
-namespace Tactics\CrsvBundle;
+namespace Tactics\FenixBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Tactics\CrsvBundle\DependencyInjection\CompilerPass;
-use Tactics\CrsvBundle\DependencyInjection\CrsvCompilerPass;
-
+use Tactics\FenixBundle\DependencyInjection\CompilerPass;
+use Tactics\FenixBundle\DependencyInjection\CrsvCompilerPass;
 
 /**
- * Class TacticsCrsvBundle
- * @package Tactics\TacticsCrsvBundle
+ * Class TacticsFenixBundle
+ * @package Tactics\TacticsFenixBundle
  */
-class TacticsCrsvBundle extends Bundle
+class TacticsFenixBundle extends Bundle
 {
     /**
      * @param ContainerBuilder $container
