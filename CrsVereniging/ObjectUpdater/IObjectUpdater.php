@@ -11,8 +11,9 @@ interface IObjectUpdater
      * @param string $fieldName
      * @param array $changes
      * @param int $revision
+     * @param array $changeRequestDetails
      * @return bool
      * @throws FieldUpdaterNotFoundException
      */
-    public function update($object, string $fieldName, array $changes, int $revision);
+    public function update($object, string $fieldName, array $changes, int $revision, array $changeRequestDetails = []);
 }
